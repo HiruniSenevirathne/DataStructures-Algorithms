@@ -1,0 +1,124 @@
+Big O
+
+* Big O is a way of comparing two set of code
+
+Time Complexity
+* Number of operations that it takes to complete something.
+
+Space Complexity
+
+Notations in time Complexity
+* Omega - Best case scenario
+* Theta - Average case
+* Omicron - Worst case
+
+Big O
+* Always talking about worst case
+
+O(n)
+* Propotional
+
+O(n)
+* Loop within a loop
+
+O(1)
+* Constant
+* Most efficient
+
+O(log n)
+* Divide and conquer
+* Number of items 8 and steps to find a certain number is 3
+    2^3=8
+    log2 8=3
+
+O(n log n)
+* Most efficient in sorting algorithms
+
+Big O: Lists
+* O(1) - append/pop last item
+         search for a number in a certain index
+
+* O(n) - insert(0,11)/pop(0)
+         insert/remove at middle
+         Search for a number
+         Because we have to re-index
+
+Simplify Big O
+* Drop Constants
+* Can't do if a function has two different parameters
+    O(2n) => O(n)
+
+* Woven Squared
+    o(n3) => O(n2)
+
+* Drop Non-Dominants
+    O(n2 + n ) => O(n2)
+
+
+Classes and Pointers
+
+Pointers
+
+* Integers are immutable (Can't be changed). Dictionaries are mutable.
+
+* Garbage Collection
+    If you don't have a variable that's pointing, there's no way to access it.
+
+Linked Lists
+
+* Lists vs Linked Lists
+    - Linked lists does not have indexes
+    - Linked list have a variable called head and points to first node
+    - Linked list have a tail which points to the last item
+    - Each node points to next and last item points to none
+    - Nodes spread out in different places in memory
+    - Lists are all in a continuous place in memory
+
+* Big O
+    * Append a new node
+        - O(1)
+    * Remove the last
+        - O(n)
+            Because we have to get the pointer of last item
+    * Add item to the front
+        - O(1)
+    * Remove first item
+        - O(1)
+    * Add/remove to middle
+        - O(n)
+
+* Node
+    - Value + Pointer
+    - It's a dictionary
+        {
+            value:'4',
+            next: none
+        }
+
+        head:{
+            value:1,
+            next:{
+                value:2,
+                next:{
+                    value:3,
+                    next:{}
+                }
+            }
+        }
+
+* Constructors
+
+def__init__(self,value)
+    * Create new node
+
+def append(self,value)
+    * Create new node
+    * Add node to end
+
+def prepend(self,value)
+    * Create new node
+    * Add node to begining
+
+def insert(self,index,value)
+    * Create new node
+    * Insert node
