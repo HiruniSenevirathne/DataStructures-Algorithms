@@ -80,6 +80,25 @@ class LinkedList:
             temp=temp.next
         return temp.value
 
+    #Set
+    def set_item(self,index,value):
+        if self.length==0:
+            return None
+        if index<0 or index>self.length:
+            return None
+        temp=self.head
+        for _ in range(index):
+            temp=temp.next
+        if temp:
+            temp.value=value
+            return True
+        return False
+    #def set_item(self,index,value):
+        # temp=self.get(index)
+        # if temp:
+        #     temp.value=value
+        #     return True
+        # return False
 
 
 
@@ -87,7 +106,7 @@ my_linked_list=LinkedList(1)
 my_linked_list.append_list(2)
 my_linked_list.append_list(3)
 # my_linked_list.print_list()
-print(my_linked_list.get(2))
+# print(my_linked_list.get(2))
 
 # my_linked_list.prepend_node(3)
 # print("********")
@@ -99,6 +118,6 @@ print(my_linked_list.get(2))
 
 # print(my_linked_list.pop_first())
 
-
-
+my_linked_list.set_item(2,4)
+my_linked_list.print_list()
 
