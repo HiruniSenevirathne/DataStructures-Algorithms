@@ -1,4 +1,7 @@
 #Creating a new node
+from http.client import NETWORK_AUTHENTICATION_REQUIRED
+
+
 class Node:
     def __init__(self,value):
         self.value=value
@@ -78,7 +81,7 @@ class LinkedList:
         temp=self.head
         for _ in range(index):
             temp=temp.next
-        return temp.value
+        return temp
 
     #Set
     def set_item(self,index,value):
@@ -100,6 +103,36 @@ class LinkedList:
         #     return True
         # return False
 
+    #Insert
+    def insert(self,index,value):
+        if index<0 or index>self.length:
+            return False
+        if index==0:
+            return self.prepend_node(value)
+        if index==self.length:
+            return self.append_list(value)
+        new_node=Node(value)
+        temp=self.get(index-1)
+        new_node.next=temp.next
+        temp.next=new_node
+        self.length+=1
+        return True
+
+    #Remove
+    def remove(self,index):
+        if index<0 or index>self.length:
+            return False
+        if index==0:
+            return self.pop_first()
+        pre=self.get(index-1)
+        temp=pre.next
+        pre.next=temp.next
+        temp.next=None
+        self.length-=1
+        if index==self.length-1:
+            return self.pop_item()
+        return temp
+
 
 
 my_linked_list=LinkedList(1)
@@ -117,6 +150,7 @@ my_linked_list.append_list(3)
 # print(my_linked_list.pop_item())
 
 # print(my_linked_list.pop_first())
+print(my_linked_list.remove(2),'\n')
 
 my_linked_list.set_item(2,4)
 my_linked_list.print_list()
