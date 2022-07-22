@@ -133,6 +133,22 @@ class LinkedList:
             return self.pop_item()
         return temp
 
+    #Reverse
+    def reverse(self):
+        temp=self.head
+        self.head=self.tail
+        self.tail=self.head
+
+        after=temp.next
+        before=None
+
+        for _ in range(self.length):
+            after=temp.next
+            temp.next=before
+            before=temp
+            temp=after
+
+
 
 
 my_linked_list=LinkedList(1)
@@ -150,8 +166,9 @@ my_linked_list.append_list(3)
 # print(my_linked_list.pop_item())
 
 # print(my_linked_list.pop_first())
-print(my_linked_list.remove(2),'\n')
+# print(my_linked_list.remove(2),'\n')
 
-my_linked_list.set_item(2,4)
+# my_linked_list.set_item(2,4)
+my_linked_list.reverse()
 my_linked_list.print_list()
 
