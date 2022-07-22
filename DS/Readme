@@ -64,7 +64,7 @@ Pointers
 * Garbage Collection
     If you don't have a variable that's pointing, there's no way to access it.
 
-Linked Lists
+**** Linked Lists
 
 * Lists vs Linked Lists
     - Linked lists does not have indexes
@@ -122,3 +122,14 @@ def prepend(self,value)
 def insert(self,index,value)
     * Create new node
     * Insert node
+
+* Applications of Linked Lists
+    * Polynomial Manipulation representation
+    * Addition of long positive integers
+    * Representation of sparse matrices
+    * Addition of long positive integers
+    * Symbol table creation
+    * Mailing list
+    * Memory management
+    * Linked allocation of files
+    * Multiple precision arithmetic etc
