@@ -1,6 +1,6 @@
 from Constructor import LinkedList
 
-
+#Creating Node
 class Node:
     def __init__(self,coeff,power):
         self.coeff=coeff
@@ -13,7 +13,8 @@ class Node:
             if self.next is not None:
                 s += self.next.str_node()
             return s
-    
+
+#Linked Lists' Functions
 class polynomial_function:
     def __init__(self):
         self.head=None
@@ -50,9 +51,11 @@ class polynomial_function:
         self.length -=1
         return temp
 
+#Example Lists
 pol1=[[1,2],[2,1],[4,0]]
 pol2=[[2,3],[3,2],[4,1],[1,0]]
 
+#Creating Linked Lists
 def create_poly_function(input:list):
 
     linked_list=polynomial_function()
@@ -61,6 +64,7 @@ def create_poly_function(input:list):
         linked_list.append(term[0],term[1])
     return linked_list
 
+#Adding Two Polynomials
 def poly_add(poly1:polynomial_function,poly2:polynomial_function):
     linked_list_3=polynomial_function()
     term1=poly1.pop_first()
@@ -95,6 +99,8 @@ poly2=create_poly_function(pol2)
 poly1.print_as_string()
 poly2.print_as_string()
 
+#Printing the Output
+print("Output ------------------------")
 poly3 = poly_add(poly1,poly2)
 poly3.print_as_string()
 
